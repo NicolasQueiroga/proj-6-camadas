@@ -43,7 +43,8 @@ int calc_even_parity(char data)
  * Recebe um byte pela porta digital `pin_rx`
  * no formato: 0 xxxxxxxx x 1
  *
- * @param uart aponta para o objeto uart.
+ * @param uart aponta para a estrutura uart com atributos
+ * 		inicializados em `sw_uart.h`.
  * @param data aponta para um caractere na memória (char array ou string).
  */
 int sw_uart_receive_byte(due_sw_uart *uart, char *data)
@@ -96,7 +97,8 @@ int sw_uart_receive_byte(due_sw_uart *uart, char *data)
 /**
  * Realiza uma espera de T/2 (meio período)
  *
- * @param uart aponta para o objeto uart.
+ * @param uart aponta para a estrutura uart com atributos
+ * 		inicializados em `sw_uart.h`.
  */
 void _sw_uart_wait_half_T(due_sw_uart *uart)
 {
@@ -107,7 +109,8 @@ void _sw_uart_wait_half_T(due_sw_uart *uart)
 /**
  * Realiza uma espera de T (um período)
  *
- * @param uart aponta para o objeto uart.
+ * @param uart aponta para a estrutura uart com atributos
+ * 		inicializados em `sw_uart.h`.
  */
 void _sw_uart_wait_T(due_sw_uart *uart)
 {
