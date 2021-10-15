@@ -59,7 +59,7 @@ void sw_uart_write_byte(due_sw_uart *uart, char data)
 	for (int i = 0; i < uart->databits; i++)
 	{
 		// int bit = data >> i & 1;
-		digitalWrite(uart->pin_tx, (int bit = data >> i & 1));
+		digitalWrite(uart->pin_tx, (data >> i & 1));
 		_sw_uart_wait_T(uart);
 	}
 
