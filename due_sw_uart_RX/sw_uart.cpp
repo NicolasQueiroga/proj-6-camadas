@@ -24,8 +24,7 @@ int calc_even_parity(char data)
 int sw_uart_receive_byte(due_sw_uart *uart, char *data)
 {
   // Wait start bit
-  // while (digitalRead(uart->pin_rx) == HIGH)
-  //   Serial.println("esperando byte");
+  while (digitalRead(uart->pin_rx) == HIGH) {}
 
   // Confirm start bit
   Serial.println("\nchegou byte");
