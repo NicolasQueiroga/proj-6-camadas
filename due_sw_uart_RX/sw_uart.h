@@ -23,11 +23,9 @@ typedef struct due_sw_uart due_sw_uart;
 #define SW_UART_EVEN_PARITY 2
 
 void sw_uart_setup(due_sw_uart *uart, int rx, int stopbits, int databits, int paritybit);
-void sw_uart_write_data(due_sw_uart *uart, char *bufferData, int writeN);
-void sw_uart_write_string(due_sw_uart *uart, char *stringData);
 int sw_uart_receive_byte(due_sw_uart *uart, char *data);
-void sw_uart_write_byte(due_sw_uart *uart, char data);
 
+int calc_even_parity(char data);
 void _sw_uart_wait_half_T(due_sw_uart *uart);
 void _sw_uart_wait_T(due_sw_uart *uart);
 
